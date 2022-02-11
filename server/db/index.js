@@ -9,6 +9,14 @@ const pool = mySql.createPool({
     port: '3306'
 });
 
+// const pool = mySql.createPool({
+//     connectionLimit: 10,
+//     password: 'FLte6yjfn3~3Tnnh',
+//     user: 'testrest',
+//     database: 'dbproducts',
+//     host: 'localhost',
+//     port: '3306'
+// });
 
 let daoProducts = {};
 

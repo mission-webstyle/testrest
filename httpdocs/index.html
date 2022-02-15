@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<title>API - Dokumentation</title>
+<body>
+	<header>
+		<h1>API - Dokumentation</h1>
+		<h2>Allgemeines</h2>
+		<p>
+			Diese Applikation fängt URL-Aufrufe auf einem HTTP-Port ab und leitet
+			davon abhängig, passende Datenbank Statements weiter an eine MariaDb.<br>
+		</p>
+		<h3>Die Basisurl der API</h3>
+		<a href="https://rudolf-histel.de/api">https://rudolf-histel.de<b>/api</b></a>
+		<h3>Datenabhängige URL-Zusätze</h3>
+		<p>Je nach gewünschten Daten müssen an die Basisurl passende Zusätze angehangen werden:</p>
+		<ul>
+			<li>Produkte: <a href="https://rudolf-histel.de/api/products">https://rudolf-histel.de/api<b>/products</b></a></li>
+		</ul>
+		<p>
+			Danach folgende weitere Zusätze je nach dem was Sie mit den Daten konkret machen möchten.
+			Das wird Ihnen in den folgenden Abschnitten unten stehend genau erklärt.
+		</p>
+	</header>
+	<main>
+		
+		
+		<h2>Produkte</h2>
+		<div class="api-documentation-products">
+			
+			<div class="api-documentation-products-children">
+				<h2>Datentypen</h2>
+				
+				<p>
+					Alle Produkte werden unter dem Domain zusatz<br>https://rudolf-histel.de<b>/api/products</b>
+					gefunden.
+				</p>
+				
+				Schöne Beispiel-Darstellung der Datentypen:<br>
+				<pre>
+<span class="bold-brackets">[</span>
+	<span class="bold-brackets">{</span>
+		<span class="attribute-color">"id"</span>: number,
+		<span class="attribute-color">"name"</span>: string,
+		<span class="attribute-color">"price"</span>: number
+	<span class="bold-brackets">}</span>
+<span class="bold-brackets">]</span></pre>
+			</div>
+			<div class="api-documentation-products-children">
+				
+				
+				<h3>Alle Produkte auslesen:</h3>
+				<a href="https://rudolf-histel.de/api/products">https://rudolf-histel.de/api/products</a><br>
+				
+				<br>
+				Schöne Beispiel-JSON-Array-Antwort auf HTTP GET Anfrage:<br>
+				<br>
+				<pre>
+<span class="bold-brackets">[</span>
+	<span class="bold-brackets">{</span>
+		<span class="attribute-color">"id"</span>: 1,
+		<span class="attribute-color">"name"</span>: "Blumen",
+		<span class="attribute-color">"price"</span>: 2.5
+	<span class="bold-brackets">}</span>,
+	<span class="bold-brackets">{</span>
+		<span class="attribute-color">"id"</span>: 2,
+		<span class="attribute-color">"name"</span>: "Sprudel",
+		<span class="attribute-color">"price"</span>: 3.33
+	<span class="bold-brackets">}</span>,
+	<span class="bold-brackets">{</span>
+		<span class="attribute-color">"id"</span>: 3,
+		<span class="attribute-color">"name"</span>: "Brot",
+		<span class="attribute-color">"price"</span>: 2.4
+	<span class="bold-brackets">}</span>, ...
+<span class="bold-brackets">]</span></pre>
+			</div>
+			<div class="api-documentation-products-children">
+				<h3>Ein bestimmtes Produkt auslesen.</h3>
+				<a href="https://rudolf-histel.de/api/products/1">https://rudolf-histel.de/api/products/1</a><br>
+				
+				<br>
+				Schöne Beispiel-JSON-Array-Antwort auf HTTP GET Anfrage:<br>
+				<br>
+				<pre>
+<span class="bold-brackets">[</span>
+	<span class="bold-brackets">{</span>
+		<span class="attribute-color">"id"</span>: 1,
+		<span class="attribute-color">"name"</span>: "Blumen",
+		<span class="attribute-color">"price"</span>: 2.5
+	<span class="bold-brackets">}</span>
+<span class="bold-brackets">]</span></pre>
+			</div>
+		</div>
+		<div class="api-documentation-products"/>
+		<div class="api-documentation-products-children">
+			<h3>Datentypen</h3>
+			<br><br>Schöne Beispiel-Darstellung der Datentypen:<br>
+			<pre>
+<span class="bold-brackets">[</span>
+	<span class="bold-brackets">{</span>
+	    <span class="attribute-color">"fieldCount"</span>: number,
+	    <span class="attribute-color">"affectedRows"</span>: number,
+	    <span class="attribute-color">"insertId"</span>: number,
+	    <span class="attribute-color">"serverStatus"</span>: number,
+	    <span class="attribute-color">"warningCount"</span>: number,
+	    <span class="attribute-color">"message"</span>: string,
+	    <span class="attribute-color">"protocol41"</span>: "true",
+	    <span class="attribute-color">"changedRows"</span>: number,
+	<span class="bold-brackets">}</span>
+<span class="bold-brackets">]</span></pre>
+		</div>
+		
+		<div class="api-documentation-products-children">
+			<div class="api-documentation-products">
+				<div class="api-documentation-products-children">
+					<h3>Ein bestimmtes Produkt einfügen.</h3>
+					<a href="https://rudolf-histel.de/api/products/insert/Eis,100">https://rudolf-histel.de/api/products/insert/Eis,100</a><br>
+					<br>Antwort auf HTTP-POST Anfrage:<br>
+					<pre>
+<span class="bold-brackets">[</span>
+	<span class="bold-brackets">{</span>
+		<span class="attribute-color">"fieldCount"</span>: 0,
+		<span class="attribute-color">"affectedRows"</span>: 1,
+		<span class="attribute-color">"insertId"</span>: 42,
+		<span class="attribute-color">"serverStatus"</span>: 2,
+		<span class="attribute-color">"warningCount"</span>: 0,
+		<span class="attribute-color">"message"</span>: "",
+		<span class="attribute-color">"protocol41"</span>: true,
+		<span class="attribute-color">"changedRows"</span>: 0,
+		
+	<span class="bold-brackets">}</span>
+<span class="bold-brackets">]</span></pre>
+				</div>
+			</div>
+		</div>
+		<div class="api-documentation-products-children">
+			<h3>Ein Produkt ändern.</h3>
+			<a href="https://rudolf-histel.de/api/products/update/Angel,3000,42">https://rudolf-histel.de/api/products/update/Angel,3000,42</a><br>
+			<br>Antwort auf HTTP-PUT Anfrage:<br>
+			<pre>
+<span class="bold-brackets">[</span>
+	<span class="bold-brackets">{</span>
+		<span class="attribute-color">"fieldCount"</span>: 0,
+		<span class="attribute-color">"affectedRows"</span>: 1,
+		<span class="attribute-color">"insertId"</span>: 42,
+		<span class="attribute-color">"serverStatus"</span>: 2,
+		<span class="attribute-color">"warningCount"</span>: 0,
+		<span class="attribute-color">"message"</span>:"(Rows matched:1..",
+		<span class="attribute-color">"protocol41"</span>: true,
+		<span class="attribute-color">"changedRows"</span>: 1,
+		
+	<span class="bold-brackets">}</span>
+<span class="bold-brackets">]</span></pre>
+		
+		</div>
+	</main>
+	<footer>
+		<div class="footer-child-left">
+			<a href="https://mission-webstyle.de/">©2022 by mission-webstyle oHG</a>
+		</div>
+		<div class="footer-child-right">
+			<a href="https://mission-webstyle.de/impressum/">Impressum</a> | <a
+			href="https://mission-webstyle.de/datenschutz/">Datenschutz</a>
+		</div>
+	</footer>
+</body>
+</html>

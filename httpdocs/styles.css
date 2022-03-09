@@ -1,29 +1,35 @@
 @charset "UTF-8";
+/*
+* Styles fuers Frontend index.html
+*/
 
 html {
     font-size: large;
     font-family: "Segoe UI", sans-serif;
     background-color: #2B2B2B;
 }
-header,main{
+
+header, main {
     border: white 1px solid;
     padding: 15px;
 }
 
-header > h1{
+header > h1 {
     text-align: center;
 }
 
-main, footer{
+main, footer {
     margin-top: 10px;
 }
-body{
-    color:white;
+
+body {
+    color: white;
 }
 
-a{
-    color:#287BDE;
+a {
+    color: #287BDE;
 }
+
 pre {
     color: #6a8659;
 }
@@ -44,9 +50,9 @@ pre {
     color: #9876aa;
 }
 
-@media screen and (min-width:600px) {
+@media screen and (min-width: 600px) {
 
-    header{
+    header {
         display: flex;
         flex-direction: column;
         flex-flow: column wrap;
@@ -54,14 +60,16 @@ pre {
         flex-wrap: wrap;
     }
 
-    header > h1{
+    header > h1 {
         text-align: center;
     }
+
     .header-child {
-        flex:1;
-        width:98%;
+        flex: 1;
+        width: 98%;
     }
-    pre{
+
+    pre {
         border: white 5px inset;
     }
 
@@ -70,17 +78,18 @@ pre {
     }
 
     .api-documentation-products-children {
-        flex:1;
-        width:50%;
+        flex: 1;
+        width: 50%;
     }
-    .api-documentation-products-children > pre{
+
+    .api-documentation-products-children > pre {
         min-height: 50vh;
-        width:95%;
+        width: 95%;
     }
 
     footer {
         display: flex;
-        padding:10px;
+        padding: 10px;
         border: #4f5a64 2px solid;
     }
 
@@ -88,6 +97,7 @@ pre {
         flex: 1;
         width: 50%;
     }
+
     .footer-child-right {
         text-align: right;
     }

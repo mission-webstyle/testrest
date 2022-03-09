@@ -1,6 +1,15 @@
+/*
+ * Waehrend die server.js auf HTTP-Anfragen reagiert
+ * checken wir hier welcher zusatz an die URL angehangen wurde
+ * um so zu entscheiden was genau aufgerufen wird.
+ * Hierzu gibt es eine Dokumentation rudolf-histel.de
+ */
+
 const express = require('express');
 const db = require('../db');
 const router = express.Router();
+
+
 
 /**
  * Get All Products

@@ -1,3 +1,10 @@
+/*
+ * Diese Datei wird von der routs/index.js
+ * aus genutzt und nutzt die uebergebenen Daten um daraus
+ * SQL-Statements anzufertigen und diese dann in der Datenbank einzugtragen
+ * oder Daten aus der Datenbank aus zu lesen.
+ */
+
 const mySql = require('mysql');
 
 const pool = mySql.createPool({
